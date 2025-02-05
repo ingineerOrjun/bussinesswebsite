@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoStyle Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Hero Section -->
+    <section
+      class="relative h-[300px] md:h-[500px] flex items-center justify-center bg-cover bg-center"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1600585154526-990dced4db0d');
+      "
+    >
+      <div class="absolute inset-0 bg-black opacity-40"></div>
+      <div class="relative z-10 text-center text-white px-4">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in-down">
+          GREENTOUCH CHEMICALS PVT. LTD.
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+          Chemistry in Harmony with Nature
+        </p>
+      </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="container mx-auto px-4 md:px-6 py-16 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-green-700">
+          Our Sustainable Mission
+        </h2>
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Committed to environmental stewardship, we curate eco-conscious
+          products that combine innovative design with sustainable materials.
+          Join us in reducing our carbon footprint one purchase at a time.
+        </p>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="container mx-auto px-4 md:px-6 py-16">
+      <h2
+        class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700"
+      >
+        Featured Collection
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product Card 1 -->
+        <div
+          class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden transform hover:-translate-y-2"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1583394838336-acd977736f90"
+              alt="Bamboo Toothbrush"
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-green-700/60 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-green-700">
+              Bamboo Toothbrush Set
+            </h3>
+            <p class="text-gray-600 mb-4">
+              100% biodegradable bamboo handles with charcoal-infused bristles
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-green-700">$12.99</span>
+              <button
+                class="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800 transition-colors duration-300 flex items-center"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div
+          class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden transform hover:-translate-y-2"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae"
+              alt="Reusable Bottle"
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-green-700/60 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-green-700">
+              Stainless Steel Bottle
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Double-walled insulation keeps drinks cold for 24 hours
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-green-700">$24.99</span>
+              <button
+                class="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800 transition-colors duration-300 flex items-center"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div
+          class="group relative bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden transform hover:-translate-y-2"
+        >
+          <div class="relative overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1585123388860-2b8e3c0dba67"
+              alt="Organic Cotton Tote"
+              class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-green-700/60 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-green-700">
+              Organic Cotton Tote
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Reusable shopping bag with reinforced handles
+            </p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-green-700">$8.99</span>
+              <button
+                class="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800 transition-colors duration-300 flex items-center"
+              >
+                <svg
+                  class="w-5 h-5 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  ></path>
+                </svg>
+                Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-green-50 py-16">
+      <div class="container mx-auto px-4 md:px-6">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-12 text-green-700"
+        >
+          Our proud Customer
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-green-700 flex items-center justify-center text-white mr-4"
+              >
+                JD
+              </div>
+              <div>
+                <h4 class="font-bold text-green-700">John Doe</h4>
+                <p class="text-gray-600 text-sm">Eco Enthusiast</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "The quality of these products exceeded my expectations. The
+              bamboo toothbrush set is now a bathroom staple!"
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-green-700 flex items-center justify-center text-white mr-4"
+              >
+                AS
+              </div>
+              <div>
+                <h4 class="font-bold text-green-700">Anna Smith</h4>
+                <p class="text-gray-600 text-sm">Sustainable Living Blogger</p>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Finally found a brand that aligns with my values. The reusable
+              bottle keeps my drinks cold all day long!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section
+      id="contact"
+      class="container mx-auto px-4 md:px-6 py-16 text-center"
+    >
+      <div class="bg-green-700 rounded-3xl p-8 md:p-12 shadow-2xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+          Join the GREENTOUCH CHEMICALS PVT.LTD.
+        </h2>
+        <p class="text-green-100 mb-8 max-w-2xl mx-auto text-lg">
+          Committed to environmental stewardship, we curate eco-conscious
+          products that combine innovative design with sustainable materials.
+          Join us in reducing our carbon footprint one purchase at a time.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
