@@ -5,8 +5,179 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcoStyle Homepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Custom Transitions */
+      .menu-transition {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      }
+
+      .menu-hidden {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+
+      .menu-visible {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    </style>
   </head>
   <body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md py-4 relative">
+      <div
+        class="container mx-auto flex justify-between items-center px-4 md:px-6"
+      >
+        <a
+          href="#"
+          class="text-green-700 text-2xl font-bold transition-transform hover:scale-110 duration-300"
+        >
+          GreenTouch Chemicals
+        </a>
+
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6 text-lg font-semibold">
+          <li>
+            <a
+              href="C:/Users/Acer/Desktop/jimmy/chatindex.html"
+              class="px-4 py-2 rounded-lg transition duration-300 hover:bg-green-500 hover:text-white"
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="file:///C:/Users/Acer/Desktop/jimmy/about.html"
+              class="px-4 py-2 rounded-lg transition duration-300 hover:bg-green-500 hover:text-white"
+            >
+              Products
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="px-4 py-2 rounded-lg transition duration-300 hover:bg-green-500 hover:text-white"
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="px-4 py-2 rounded-lg transition duration-300 hover:bg-green-500 hover:text-white"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Hamburger Menu Button -->
+        <button
+          id="menu-button"
+          class="md:hidden text-green-700 p-2 hover:bg-green-50 rounded-lg focus:outline-none"
+          aria-label="Toggle menu"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="menu-transition menu-hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50"
+      >
+        <div class="py-2">
+          <a
+            href="#home"
+            class="block px-4 py-2 text-green-700 hover:bg-green-500 hover:text-white transition duration-300"
+          >
+            Home
+          </a>
+          <a
+            href="#products"
+            class="block px-4 py-2 text-green-700 hover:bg-green-500 hover:text-white transition duration-300"
+          >
+            Products
+          </a>
+          <a
+            href="#about"
+            class="block px-4 py-2 text-green-700 hover:bg-green-500 hover:text-white transition duration-300"
+          >
+            About
+          </a>
+          <a
+            href="#contact"
+            class="block px-4 py-2 text-green-700 hover:bg-green-500 hover:text-white transition duration-300"
+          >
+            Contact
+          </a>
+        </div>
+      </div>
+
+      <!-- Overlay -->
+      <div
+        id="menu-overlay"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 md:hidden"
+      ></div>
+    </nav>
+
+    <script>
+      // Get DOM elements
+      const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const menuOverlay = document.getElementById("menu-overlay");
+
+      // Toggle menu function
+      function toggleMenu() {
+        const isMenuHidden = mobileMenu.classList.contains("menu-hidden");
+
+        if (isMenuHidden) {
+          // Show menu
+          mobileMenu.classList.remove("menu-hidden");
+          mobileMenu.classList.add("menu-visible");
+          menuOverlay.classList.remove("hidden");
+        } else {
+          // Hide menu
+          mobileMenu.classList.remove("menu-visible");
+          mobileMenu.classList.add("menu-hidden");
+          menuOverlay.classList.add("hidden");
+        }
+      }
+
+      // Event listeners
+      menuButton.addEventListener("click", toggleMenu);
+      menuOverlay.addEventListener("click", toggleMenu);
+
+      // Close menu on window resize (if switching to desktop view)
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          // md breakpoint
+          mobileMenu.classList.remove("menu-visible");
+          mobileMenu.classList.add("menu-hidden");
+          menuOverlay.classList.add("hidden");
+        }
+      });
+
+      // Close menu when clicking menu items
+      const menuItems = mobileMenu.getElementsByTagName("a");
+      for (const item of menuItems) {
+        item.addEventListener("click", toggleMenu);
+      }
+    </script>
+
     <!-- Hero Section -->
     <section
       class="relative h-[300px] md:h-[500px] flex items-center justify-center bg-cover bg-center"
@@ -254,5 +425,197 @@
         </p>
       </div>
     </section>
+
+    <!-- Footer Section with Enhanced Hover Effects -->
+    <footer class="bg-green-800 text-white relative overflow-hidden group">
+      <!-- Animated Background Gradient (subtle movement on hover) -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-green-900 to-green-700 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"
+      ></div>
+
+      <!-- Main Footer -->
+      <div class="container mx-auto px-4 py-8 relative">
+        <!-- Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Company Info Section -->
+          <div
+            class="space-y-4 transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h3 class="text-2xl font-bold mb-4 relative inline-block">
+              GreenTouch Chemicals
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"
+              ></span>
+            </h3>
+            <p
+              class="text-green-100 hover:text-white transition-all duration-300"
+            >
+              "Chemistry in Harmony with Nature"
+            </p>
+            <p
+              class="text-sm text-green-100 hover:text-white transition-all duration-300"
+            >
+              Leading manufacturer of eco-friendly chemical solutions for a
+              sustainable future.
+            </p>
+
+            <!-- Social Media Icons with Enhanced Hover -->
+            <div class="flex space-x-4 mt-4">
+              <a
+                href="#"
+                class="transform hover:scale-110 hover:rotate-6 transition-all duration-300"
+              >
+                <div
+                  class="bg-green-700 p-2 rounded-full hover:bg-green-600 transition-colors duration-300"
+                >
+                  <svg
+                    class="w-6 h-6 text-white"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    />
+                  </svg>
+                </div>
+              </a>
+              <!-- Add similar styling for other social media icons -->
+            </div>
+          </div>
+
+          <!-- Quick Links with Hover Effects -->
+          <div
+            class="transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h4 class="text-lg font-semibold mb-4 relative inline-block">
+              Quick Links
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"
+              ></span>
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#"
+                  class="relative text-green-100 hover:text-white transition-colors duration-300 group"
+                >
+                  <span class="relative z-10">Products</span>
+                  <span
+                    class="absolute left-0 bottom-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"
+                  ></span>
+                </a>
+              </li>
+              <!-- Apply similar styling to other quick links -->
+            </ul>
+          </div>
+
+          <!-- Contact Info with Interactive Elements -->
+          <div
+            class="transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h4 class="text-lg font-semibold mb-4 relative inline-block">
+              Contact Us
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"
+              ></span>
+            </h4>
+            <div class="space-y-3">
+              <p
+                class="flex items-start group hover:bg-green-700 p-2 rounded-lg transition-all duration-300"
+              >
+                <svg
+                  class="w-5 h-5 mr-2 mt-1 group-hover:text-green-400 transition-colors duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+                <span
+                  class="text-green-100 group-hover:text-white transition-colors duration-300"
+                >
+                  123 Green Avenue, Industrial Area<br />
+                  Chennai, Tamil Nadu 600001
+                </span>
+              </p>
+              <!-- Apply similar styling to other contact info -->
+            </div>
+          </div>
+
+          <!-- Newsletter Section with Interactive Form -->
+          <div
+            class="transform hover:-translate-y-1 transition-transform duration-300"
+          >
+            <h4 class="text-lg font-semibold mb-4 relative inline-block">
+              Newsletter
+              <span
+                class="absolute bottom-0 left-0 w-0 h-0.5 bg-green-400 group-hover:w-full transition-all duration-300"
+              ></span>
+            </h4>
+            <p
+              class="text-green-100 mb-4 hover:text-white transition-colors duration-300"
+            >
+              Subscribe to our newsletter for updates and insights.
+            </p>
+            <form class="space-y-2">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="w-full px-4 py-2 rounded-lg bg-green-700 text-white placeholder-green-200 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-green-600 transform hover:scale-102 transition-all duration-300"
+              />
+              <button
+                type="submit"
+                class="w-full px-4 py-2 bg-green-600 rounded-lg hover:bg-green-500 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer with Hover Effects -->
+      <div
+        class="border-t border-green-700 hover:border-green-600 transition-colors duration-300"
+      >
+        <div class="container mx-auto px-4 py-4">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center text-sm text-green-100"
+          >
+            <p class="hover:text-white transition-colors duration-300">
+              © 2025 GreenTouch Chemicals Pvt. Ltd. All rights reserved.
+            </p>
+            <div class="flex space-x-4 mt-2 md:mt-0">
+              <a
+                href="#"
+                class="hover:text-white hover:underline transition-all duration-300"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="hover:text-white hover:underline transition-all duration-300"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="hover:text-white hover:underline transition-all duration-300"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
